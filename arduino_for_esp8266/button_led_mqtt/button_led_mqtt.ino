@@ -16,19 +16,20 @@
 #define LED_PIN 12
 // WiFi
 // Make sure to update this for your own WiFi network!
-const char* ssid = "your-network
+const char* ssid = "your-network";
 const char* wifi_password = "your_password";
 
 // MQTT
 // Make sure to update this for your own MQTT Broker!
 const char* mqtt_server = "your_server";
-const char* mqtt_username = "your_username_for_mqtt";
-const char* mqtt_password = "yout_password_for_mqtt";
+const char* mqtt_username = "mqtt";//"your_username_for_mqtt";
+const char* mqtt_password = "mqtt";//"yout_password_for_mqtt";
+// 1 is the number of the sensor it will be use also for receiving back the command
 // The client id identifies the ESP8266 device.
-const char* clientID = "Client ID";
+const char* clientID = "Client ID=1";
 
-const char *outTopic = "your_out_topic";
-const char *inTopic = "your_in_topic";
+const char *outTopic = "sensors/1";//"your_sensor_topic";
+const char *inTopic = "actions/1";//"your_action_topic";
 // Initialise the Pushbutton Bouncer object
 Bounce bouncer = Bounce();
 
