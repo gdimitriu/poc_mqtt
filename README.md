@@ -8,3 +8,7 @@ The java project button_led_mqtt is the java application to interact with the mq
 If it receives button pressed operation then it will toggle the LED on the ESP8266 on the specific device that send the command.
 
 The sensor number is found from the subscribing topic for example: sensors/1 or sensors/2 it sends command to topic actions/1 or actions/2.
+
+To compile the C library you need to compile and install : https://github.com/eclipse/paho.mqtt.c
+
+The documentation for the poho C are : https://www.eclipse.org/paho/files/mqttdoc/MQTTClient/html/index.html
