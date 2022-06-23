@@ -41,10 +41,10 @@ int messageArrived(void *context, char *topicName, int topicLen,
 
 	string topics(topicName);
 	int pos = topics.find_first_of("/");
-	int topicNr = atoi(topics.substr(pos,topics.length()).c_str());
+	int topicNr = atoi(topics.substr(pos + 1,topics.length()).c_str());
 	string replyTopic(topicActions);
 	replyTopic += "/";
-	replyTopic += topicNr;
+	replyTopic += to_string(topicNr);
 	MQTTClient_deliveryToken token;
 	MQTTClient_message pubMsg = MQTTClient_message_initializer;
 
@@ -66,6 +66,7 @@ int messageArrived(void *context, char *topicName, int topicLen,
 	pubMsg.qos = QOS;
 	pubMsg.retained = 0;
 	MQTTClient_publishMessage(client, replyTopic.c_str(), &pubMsg, &token);
+	printf("Message sent %s to topic %s\n",pubMsg.payload,replyTopic.c_str());
 	MQTTClient_freeMessage(&message);
 	MQTTClient_free(topicName);
 	return 1;
