@@ -10,3 +10,7 @@ If it receives button pressed operation then it will toggle the LED on the ESP82
 The sensor number is found from the subscribing topic for example: sensors/1 or sensors/2 it sends command to topic actions/1 or actions/2.
 
 For the java version please look at : https://blogs.oracle.com/javamagazine/post/java-mqtt-iot-message-queuing
+
+To compile the C library you need to compile and install : https://github.com/eclipse/paho.mqtt.c
+
+The documentation for the poho C are : https://www.eclipse.org/paho/files/mqttdoc/MQTTClient/html/index.html
